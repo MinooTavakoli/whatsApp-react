@@ -23,4 +23,3 @@ function App() {
 
 export default App;
 
-// "homepage": "https://github.com/MinooTavakoli/whatsApp-react#readme",

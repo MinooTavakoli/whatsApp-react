@@ -61,7 +61,7 @@ MIT
 
 > Minoo Tavakoli
 
-[license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
+[license-image]: http://img.shields.io/npm/l/whatsApp-react.svg?style=flat
 [license-url]: LICENSE
 [npm-url]: https://npmjs.org/package/whatsApp-react
 [npm-version-image]: http://img.shields.io/npm/v/whatsApp-react.svg?style=flat
