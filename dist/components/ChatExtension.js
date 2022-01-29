@@ -39,11 +39,10 @@ const checkMobile = (isMobile, other) => {
 
 function ChatExtension(_ref) {
   let {
-    dir = "rtl",
-    position = "right",
+    dir = "ltr",
+    position = "left",
     color = "#ffffff",
-    backgroundColor = "#376466",
-    backgroundIcon = "#009299",
+    backgroundColor = "#009299",
     accountList = [],
     target = "_blank"
   } = _ref;
@@ -54,7 +53,7 @@ function ChatExtension(_ref) {
       display: "inline",
       direction: dir
     }
-  }, /*#__PURE__*/_react.default.createElement("style", null, "\n            .wa__stt_offline {\n                pointer-events: none;\n              }\n              \n              .wa__button_text_only_me .wa__btn_txt {\n                padding-top: 16px !important;\n                padding-bottom: 15px !important;\n              }\n              \n              .wa__popup_content_item .wa__cs_img_wrap {\n                width: 48px;\n                height: 48px;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading {\n                background: ".concat(backgroundIcon, ";\n              }\n              \n              .wa__btn_popup .wa__btn_popup_icon {\n                background: ").concat(backgroundIcon, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_title {\n                color: ").concat(color, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro {\n                color: ").concat(color, ";\n                opacity: 0.8;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro strong {\n                color: ").concat(color, ";\n              }\n            ")), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("style", null, "\n            .wa__stt_offline {\n                pointer-events: none;\n              }\n              \n              .wa__button_text_only_me .wa__btn_txt {\n                padding-top: 16px !important;\n                padding-bottom: 15px !important;\n              }\n              \n              .wa__popup_content_item .wa__cs_img_wrap {\n                width: 48px;\n                height: 48px;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading {\n                background: ".concat(backgroundColor, ";\n              }\n              \n              .wa__btn_popup .wa__btn_popup_icon {\n                background: ").concat(backgroundColor, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_title {\n                color: ").concat(color, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro {\n                color: ").concat(color, ";\n                opacity: 0.8;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro strong {\n                color: ").concat(color, ";\n              }\n            ")), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__btn_popup".concat(active ? " wa__active" : ""),
     style: {
       left: position === "left" ? "30px" : "auto",
