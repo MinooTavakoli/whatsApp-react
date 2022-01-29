@@ -1,13 +1,15 @@
 {
   "name": "whatsapp-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "whatsapp react js package .The new online chat experience begins here! ",
   "keywords": [
     "whatsapp",
     "react",
     "whatsapp-chat",
+    "whatsapp-extentation",
     "chat-extentation",
-    "چت آنلاین"
+    "چت آنلاین",
+    "واتساپ"
   ],
   "author": "minoo tavakoli <minootavakoli28@gmail.com>",
   "license": "MIT",

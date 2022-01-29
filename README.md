@@ -49,9 +49,13 @@ function App() {
 
 ## Props
 
-| props       | defaultValue | description                                                                                                                                               |
-| ----------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| accountList | null         | const accounts = [{name: "مثال:‌فروش", position: "مثال: واحد پشتیبانی فروش", account: "98912.......", avatar: <img src={Logo} alt="" />, status: true }]; |
+| props           | defaultValue                                               | description                                                            |
+| --------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
+| accountList     | []                                                         | `[{name: "", position: "", account: "", avatar: null, status: true }]` |
+| dir             | ltr                                                        | `ltr` \|\| `rtl`                                                       |
+| position        | left                                                       | `left` \|\| `right`                                                    |
+| color           | <span style="background:#376466;color:#fff">#ffffff</span> | `any color`                                                            |
+| backgroundColor | <span style="background:#376466;color:#fff">#376466</span> | `any color`                                                            |
 
 ### License
 
@@ -61,10 +65,10 @@ MIT
 
 > Minoo Tavakoli
 
-[license-image]: http://img.shields.io/npm/l/whatsApp-react.svg?style=flat
+[license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
 [license-url]: LICENSE
-[npm-url]: https://npmjs.org/package/whatsApp-react
-[npm-version-image]: http://img.shields.io/npm/v/whatsApp-react.svg?style=flat
-[npm-downloads-image]: http://img.shields.io/npm/dm/whatsApp-react.svg?style=flat
-[npm-downloads-size-image]: https://img.shields.io/bundlephobia/minzip/whatsApp-react.svg?style=flat
-[downloads-url]: https://npmcharts.com/compare/whatsApp-react?minimal=true
+[npm-url]: https://npmjs.org/package/whatsapp-react
+[npm-version-image]: http://img.shields.io/npm/v/whatsapp-react.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/whatsapp-react.svg?style=flat
+[npm-downloads-size-image]: https://img.shields.io/bundlephobia/minzip/whatsapp-react.svg?style=flat
+[downloads-url]: https://npmcharts.com/compare/whatsapp-react?minimal=true
