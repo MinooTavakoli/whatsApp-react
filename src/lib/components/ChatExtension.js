@@ -116,10 +116,10 @@ function ChatExtension({
                 <div className="wa__popup_content_item " key={index}>
                   <a
                     target="_blank"
-                    href={`${checkMobile(
-                      "whatsapp://",
-                      "https://web.whatsapp.com/"
-                    )}send?phone=${item.account}`}
+                    href={`
+                    ${("whatsapp://", "https://web.whatsapp.com/")}send?phone=${
+                      item.account
+                    }`}
                     className="wa__stt wa__stt_online"
                     style={{
                       borderLeft:
@@ -191,141 +191,7 @@ function ChatExtension({
                       <div className="wa__member_duty">{item.position}</div>
                     </div>
                   </a>
-                  {checkMobile(
-                    <a
-                      href={`tel:+${item?.account}`}
-                      style={{ padding: "10px 0" }}
-                    >
-                      <style
-                        id="breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd"
-                        data-anikit=""
-                      >
-                        {`@keyframes breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd
-{
-  0% {
-    animation-timing-function: cubic-bezier(0.9647,0.2413,-0.0705,0.7911);
-    transform: scale(0.9099999999999999);
-  }
-  51% {
-    animation-timing-function: cubic-bezier(0.9226,0.2631,-0.0308,0.7628);
-    transform: scale(1.02994);
-  }
-  100% {
-    transform: scale(0.9099999999999999);
-  }
-}`}
-                      </style>
-                      <svg
-                        viewBox="0 0 100 100"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style={{
-                          height: "100%",
-                          width: "100%",
-                        }}
-                        width="100px"
-                        height="48px"
-                      >
-                        <g
-                          class="ldl-scale"
-                          style={{
-                            transformOrigin: "50% 50%",
-                            transform: "rotate(0deg) scale(0.8, 0.8)",
-                          }}
-                        >
-                          <g class="ldl-ani">
-                            <g class="ldl-layer">
-                              <g
-                                class="ldl-ani"
-                                style={{
-                                  transform: "scale(0.91)",
-                                  transformOrigin: "50px 50px",
-                                  animation:
-                                    "1.11111s linear -0.694444s infinite normal forwards running breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd",
-                                }}
-                              >
-                                <path
-                                  stroke-miterlimit="10"
-                                  stroke-linecap="round"
-                                  stroke-width="3"
-                                  stroke="#323232"
-                                  fill="none"
-                                  d="M31.342 43.173a6.323 6.323 0 0 0 0-8.942l-5.676-5.676a6.323 6.323 0 0 0-8.942 0l.01-.01-2.905 2.905c-16.851 16.851 38.547 72.248 55.398 55.398l2.905-2.905-.01.01a6.323 6.323 0 0 0 0-8.942l-5.676-5.676a6.323 6.323 0 0 0-8.942 0l-2.288 2.288c-1.84 1.84-4.768 1.96-6.78.309-6.94-5.695-13.994-12.749-19.689-19.689-1.651-2.012-1.532-4.939.309-6.78l2.286-2.29z"
-                                  style={{ stroke: "rgb(0, 0, 0)" }}
-                                ></path>
-                              </g>
-                            </g>
-                            <g class="ldl-layer">
-                              <g class="ldl-ani">
-                                <g>
-                                  <g class="ldl-layer">
-                                    <g
-                                      class="ldl-ani"
-                                      style={{
-                                        transform: "scale(0.91)",
-                                        transformOrigin: "50px 50px",
-                                        animation:
-                                          "1.11111s linear -0.833333s infinite normal forwards running breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd",
-                                      }}
-                                    >
-                                      <path
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-width="3"
-                                        stroke="#2db742"
-                                        fill="none"
-                                        d="M42.035 32.391c13.555 1.022 24.317 12.036 24.932 25.7"
-                                      ></path>
-                                    </g>
-                                  </g>
-                                  <g class="ldl-layer">
-                                    <g
-                                      class="ldl-ani"
-                                      style={{
-                                        transform: "scale(0.91)",
-                                        transformOrigin: "50px 50px",
-                                        animation:
-                                          "1.11111s linear -0.972222s infinite normal forwards running breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd",
-                                      }}
-                                    >
-                                      <path
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-width="3"
-                                        stroke="#2db742"
-                                        fill="none"
-                                        d="M78.352 58.092C77.72 38.139 61.88 22.025 42.035 20.977"
-                                      ></path>
-                                    </g>
-                                  </g>
-                                  <g class="ldl-layer">
-                                    <g
-                                      class="ldl-ani"
-                                      style={{
-                                        transform: "scale(0.91)",
-                                        transformOrigin: "50px 50px",
-                                        animation:
-                                          "1.11111s linear -1.11111s infinite normal forwards running breath-d05c0ec6-a6ce-46c7-8372-f11168654cfd",
-                                      }}
-                                    >
-                                      <path
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-width="3"
-                                        stroke="#2db742"
-                                        fill="none"
-                                        d="M89.325 58.092C88.684 32.079 67.941 11.063 42.035 10"
-                                      ></path>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </svg>
-                    </a>,
-                    null
-                  )}
+                 
                 </div>
               );
             })}

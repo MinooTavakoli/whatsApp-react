@@ -61,10 +61,10 @@ MIT
 
 > Minoo Tavakoli
 
-[license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
+<!-- [license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
 [license-url]: LICENSE
 [npm-url]: https://npmjs.org/package/whatsApp-react
 [npm-version-image]: http://img.shields.io/npm/v/whatsApp-react.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/whatsApp-react.svg?style=flat
 [npm-downloads-size-image]: https://img.shields.io/bundlephobia/minzip/whatsApp-react.svg?style=flat
-[downloads-url]: https://npmcharts.com/compare/whatsApp-react?minimal=true
+[downloads-url]: https://npmcharts.com/compare/whatsApp-react?minimal=true -->

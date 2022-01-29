@@ -14,16 +14,7 @@ function App() {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "start",
-        justifyContent: "center",
-        gap: "1.5rem",
-        padding: "5rem",
-      }}
-    >
+    <div>
       <p>Test whatsApp.</p>
       <WhatsApp accountList={accounts} />
     </div>
