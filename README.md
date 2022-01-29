@@ -18,14 +18,14 @@ The all-in-one multichannel messaging platform that connects companies & custome
 ### Installation
 
 ```bash
-npm i whatsapp-react
+npm i whatsApp-react
 ```
 
-## USE Whatsapp Package
+## USE WhatsApp Package
 
 ```js
 import React from "react";
-import Whatsapp from "whatsapp-react";
+import WhatsApp from "whatsApp-react";
 import Logo from "./avatarDefault.jpg";
 
 function App() {
