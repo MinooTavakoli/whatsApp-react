@@ -1,6 +1,6 @@
 {
   "name": "whatsapp-react",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "whatsapp react js package .The new online chat experience begins here! ",
   "keywords": [
     "whatsapp",
@@ -12,9 +12,9 @@
   "author": "minoo tavakoli <minootavakoli28@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MinooTavakoli/whatsapp-react/issues"
+    "url": "https://github.com/MinooTavakoli/whatsApp-react/issues"
   },
-  "homepage": "https://github.com/MinooTavakoli/whatsapp-react#readme",
+  "homepage": "https://github.com/MinooTavakoli/whatsApp-react#readme",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MinooTavakoli/whatsapp-react.git"
+    "url": "https://github.com/MinooTavakoli/whatsApp-react.git"
   },
   "browserslist": {
     "production": [
