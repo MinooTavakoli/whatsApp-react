@@ -9,6 +9,8 @@ require("core-js/modules/es.regexp.exec.js");
 
 require("core-js/modules/es.regexp.test.js");
 
+require("core-js/modules/es.symbol.description.js");
+
 require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
@@ -44,16 +46,25 @@ function ChatExtension(_ref) {
     color = "#ffffff",
     backgroundColor = "#009299",
     accountList = [],
+    tooltipTitle = "",
+    tooltipDescription = "",
+    title = "",
+    lead = "",
+    description = "",
     target = "_blank"
   } = _ref;
   const [active, setActive] = (0, _react.useState)(false);
-  if (!(accountList && accountList[0])) return null;
+  const [renderKey, setRenderKey] = (0, _react.useState)("");
+  (0, _react.useEffect)(() => {
+    setRenderKey("".concat(Math.floor(Math.random() * 1000000)));
+  }, []);
+  if (!(accountList && accountList[0] && renderKey)) return null;
   return /*#__PURE__*/_react.default.createElement("div", {
     style: {
       display: "inline",
       direction: dir
     }
-  }, /*#__PURE__*/_react.default.createElement("style", null, "\n            .wa__stt_offline {\n                pointer-events: none;\n              }\n              \n              .wa__button_text_only_me .wa__btn_txt {\n                padding-top: 16px !important;\n                padding-bottom: 15px !important;\n              }\n              \n              .wa__popup_content_item .wa__cs_img_wrap {\n                width: 48px;\n                height: 48px;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading {\n                background: ".concat(backgroundColor, ";\n              }\n              \n              .wa__btn_popup .wa__btn_popup_icon {\n                background: ").concat(backgroundColor, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_title {\n                color: ").concat(color, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro {\n                color: ").concat(color, ";\n                opacity: 0.8;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro strong {\n                color: ").concat(color, ";\n              }\n            ")), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("style", null, "\n            .wa__stt_offline {\n                pointer-events: none;\n              }\n              \n              .wa__button_text_only_me .wa__btn_txt {\n                padding-top: 16px !important;\n                padding-bottom: 15px !important;\n              }\n              \n              .wa__popup_content_item .wa__cs_img_wrap {\n                width: 48px;\n                height: 48px;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading.wp_".concat(renderKey, " {\n                background: ").concat(backgroundColor, ";\n              }\n              \n              .wa__btn_popup .wa__btn_popup_icon.wp_").concat(renderKey, " {\n                background: ").concat(backgroundColor, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading.wp_").concat(renderKey, " .wa__popup_title {\n                color: ").concat(color, ";\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading.wp_").concat(renderKey, " .wa__popup_intro{\n                color: ").concat(color, ";\n                opacity: 0.8;\n              }\n              \n              .wa__popup_chat_box .wa__popup_heading.wp_").concat(renderKey, " .wa__popup_intro strong {\n                color: ").concat(color, ";\n              }\n            ")), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__btn_popup".concat(active ? " wa__active" : ""),
     style: {
       left: position === "left" ? "30px" : "auto",
@@ -69,8 +80,8 @@ function ChatExtension(_ref) {
       marginLeft: position === "left" ? "7px" : "auto",
       marginRight: position === "left" ? "auto" : "7px"
     }
-  }, "\u062F\u0631 \u0645\u0648\u0631\u062F \u0627\u06CC\u0646 \u0645\u062D\u0635\u0648\u0644 \u0633\u0648\u0627\u0644\u06CC \u062F\u0627\u0631\u06CC\u062F\u061F", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("strong", null, "\u0686\u062A \u0627\u0632 \u0637\u0631\u06CC\u0642 \u0648\u0627\u062A\u0633\u200C\u0627\u067E")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "wa__btn_popup_icon"
+  }, tooltipTitle, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("strong", null, tooltipDescription), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "wa__btn_popup_icon wp_".concat(renderKey)
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_chat_box".concat(active ? " wa__pending wa__active wa__lauch" : ""),
     style: {
@@ -78,22 +89,22 @@ function ChatExtension(_ref) {
       right: position === "left" ? "auto" : "25px"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "wa__popup_heading wa__popup_heading_".concat(dir),
+    className: "wa__popup_heading wa__popup_heading_".concat(dir, " wp_").concat(renderKey),
     style: {
       padding: dir === "ltr" ? "15px 74px 17px 43px" : "15px 43px 17px 74px"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_title"
-  }, "\u0634\u0631\u0648\u0639 \u0645\u06A9\u0627\u0644\u0645\u0647"), /*#__PURE__*/_react.default.createElement("div", {
+  }, title), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_intro"
-  }, accountList && accountList.length > 1 ? /*#__PURE__*/_react.default.createElement("span", null, "\u06CC\u06A9\u06CC \u0627\u0632 \u0627\u0639\u0636\u0627 \u0631\u0627 \u0627\u0646\u062A\u062E\u0627\u0628 \u0648") : /*#__PURE__*/_react.default.createElement("span", null, " \u0644\u0637\u0641\u0627 "), "\u062F\u0631 ", /*#__PURE__*/_react.default.createElement("strong", null, "\u0648\u0627\u062A\u0633\u200C\u0627\u067E"), " \u06AF\u0641\u062A\u06AF\u0648 \u06A9\u0646\u06CC\u062F")), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("strong", null, lead))), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_content wa__popup_content_left",
     style: {
       textAlign: dir === "ltr" ? "left" : "right"
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_notice"
-  }, "\u067E\u0627\u0633\u062E\u06AF\u0648\u060C \u0628\u0647 \u0637\u0648\u0631 \u0645\u0639\u0645\u0648\u0644 \u062F\u0631 \u0686\u0646\u062F \u062F\u0642\u06CC\u0642\u0647 \u067E\u0627\u0633\u062E \u0645\u06CC \u062F\u0647\u0646\u062F."), /*#__PURE__*/_react.default.createElement("div", {
+  }, description), /*#__PURE__*/_react.default.createElement("div", {
     className: "wa__popup_content_list"
   }, accountList.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement("div", {
@@ -101,9 +112,11 @@ function ChatExtension(_ref) {
       key: index
     }, /*#__PURE__*/_react.default.createElement("a", {
       target: target,
-      href: "\n                    ".concat(checkMobile("whatsapp://", "https://web.whatsapp.com/"), "send?phone=").concat(item.account),
+      href: item.status ? "\n                    ".concat(checkMobile("whatsapp://", "https://web.whatsapp.com/"), "send?phone=").concat(item.account) : undefined,
       className: "wa__stt wa__stt_online",
       style: {
+        cursor: item.status ? 'pointer' : "default",
+        filter: !item.status ? 'blur(2px) grayscale(0.5) opacity(0.5)' : undefined,
         borderLeft: dir === "rtl" ? item.status ? "2px solid #2db742" : "2px solid #ff0000" : "none",
         borderRight: dir === "rtl" ? "none" : item.status ? "2px solid #2db742" : "2px solid #ff0000"
       }
