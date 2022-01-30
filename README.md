@@ -31,27 +31,50 @@ npm i whatsapp-react
 ```js
 import React from "react";
 import WhatsApp from "whatsapp-react";
-import Logo from "./avatarDefault.jpg";
+import userOne from "./lib/components/user_one.jpg";
+import userTwo from "./lib/components/user_two.jpg";
+import userThree from "./lib/components/user_three.jpg";
+import userFour from "./lib/components/user_four.jpg";
 
 function App() {
-  const accounts = [
+  const englishAccounts = [
     {
-      name: "Sales Team",
-      position: "Example: Sales Support Unit",
+      name: "Jeffrey Brown",
+      position: "creative leader",
       account: "98912*******",
-      avatar: <img src={Logo} alt="" />,
+      avatar: <img src={userOne} alt="" />,
+      status: false,
+    },
+    {
+      name: "${{accountList.*.name}}",
+      position: "${{accountList.*.position}}",
+      account: "98912*******",
+      avatar: <img src={userFive} alt="" />,
+      status: true,
+    },
+    {
+      name: "Alex Grinfield",
+      position: "programming guru",
+      account: "98912*******",
+      avatar: <img src={userThree} alt="" />,
+      status: true,
+    },
+    {
+      name: "Roxie Swanson",
+      position: "Sales Manager",
+      account: "98912*******",
+      avatar: <img src={userFour} alt="" />,
       status: true,
     },
   ];
   return (
     <div>
-      <h1>This is a test</h1>
       <WhatsApp
         tooltipTitle={"Do you have any questions about this product?"}
         tooltipDescription="Chat via WhatsApp"
-        title={"${{title}}"}
-        lead={"${{lead}}"}
-        description={"${{description}}"}
+        title={"chat start"}
+        lead={"Please chat on WhatsApp"}
+        description={"Responsive, usually responds in minutes"}
         accountList={englishAccounts}
       />
     </div>
