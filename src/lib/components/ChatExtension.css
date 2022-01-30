@@ -430,6 +430,7 @@
   color: #ffffff;
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
 }
 
 .wa__popup_chat_box .wa__popup_heading .wa__popup_intro {
@@ -909,7 +910,7 @@
 }
 .wa__btn_popup .wa__btn_popup_txt {
   position: absolute;
-  width: 179px;
+  width: 260px;
   right: 100%;
   background-color: #f5f7f9;
   font-size: 12px;

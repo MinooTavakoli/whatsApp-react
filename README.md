@@ -4,13 +4,14 @@
 
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-size-image]][npm-url] [![NPM downloads][npm-downloads-image]][downloads-url] [![MIT License][license-image]][license-url]
 
-#### The new online chat experience begins here!
+#### whatsApp chat begins here!
 
-Give your customer experience a human touch
-The all-in-one multichannel messaging platform that connects companies & customers.
+More than 2 billion people in over 180 countries use WhatsApp1 to stay in touch with friends and family, anytime and anywhere. WhatsApp is free2 and offers simple, secure, reliable messaging and calling, available on phones all over the world.
 
 - [Installation](#installation)
+- [Demo](#demo)
 - [Usage](#use-whatsapp-package)
+- [Information](#information)
 - [Props](#props)
 - [License](#license)
 - [Author](#author)
@@ -20,6 +21,10 @@ The all-in-one multichannel messaging platform that connects companies & custome
 ```bash
 npm i whatsapp-react
 ```
+
+### Demo
+
+![whatsapp](https://github.com/MinooTavakoli/whatsApp-react/blob/main/public/whatsapp-demo.gif)
 
 ## USE WhatsApp Package
 
@@ -31,8 +36,8 @@ import Logo from "./avatarDefault.jpg";
 function App() {
   const accounts = [
     {
-      name: "مثال: فروش",
-      position: "مثال: واحد پشتیبانی فروش",
+      name: "Sales Team",
+      position: "Example: Sales Support Unit",
       account: "98912*******",
       avatar: <img src={Logo} alt="" />,
       status: true,
@@ -41,21 +46,37 @@ function App() {
   return (
     <div>
       <h1>This is a test</h1>
-      <WhatsApp accountList={accounts} />
+      <WhatsApp
+        tooltipTitle={"Do you have any questions about this product?"}
+        tooltipDescription="Chat via WhatsApp"
+        title={"${{title}}"}
+        lead={"${{lead}}"}
+        description={"${{description}}"}
+        accountList={englishAccounts}
+      />
     </div>
   );
 }
 ```
 
+## Informatin
+
+![whatsapp](https://github.com/MinooTavakoli/whatsApp-react/blob/main/public/information.jpeg)
+
 ## Props
 
-| props           | defaultValue                                               | description                                                            |
-| --------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
-| accountList     | []                                                         | `[{name: "", position: "", account: "", avatar: null, status: true }]` |
-| dir             | ltr                                                        | `ltr` \|\| `rtl`                                                       |
-| position        | left                                                       | `left` \|\| `right`                                                    |
-| color           | <span style="background:#376466;color:#fff">#ffffff</span> | `any color`                                                            |
-| backgroundColor | <span style="background:#376466;color:#fff">#376466</span> | `any color`                                                            |
+| props              | defaultValue                                               | description                                                            | status of requirements |
+| ------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------- |
+| accountList        | []                                                         | `[{name: "", position: "", account: "", avatar: null, status: true }]` | required \*            |
+| dir                | ltr                                                        | `ltr` \|\| `rtl`                                                       | optional               |
+| position           | left                                                       | `left` \|\| `right`                                                    | optional               |
+| tooltipTitle       | string                                                     | `The question in tooltip title`                                        | optional               |
+| tooltipDescription | string                                                     | `The desired tooltip description`                                      | optional               |
+| title              | string                                                     | `Text to get started`                                                  | optional               |
+| lead               | string                                                     | `Text to lead`                                                         | optional               |
+| description        | string                                                     | `description text`                                                     | optional               |
+| color              | <span style="background:#376466;color:#fff">#ffffff</span> | `any color`                                                            | optional               |
+| backgroundColor    | <span style="background:#376466;color:#fff">#376466</span> | `any color`                                                            | optional               |
 
 ### License
 

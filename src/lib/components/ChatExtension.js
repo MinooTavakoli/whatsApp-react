@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ChatExtension.css";
 const checkMobile = (isMobile, other) => {
   const mobileCheck = function () {
@@ -29,10 +29,21 @@ function ChatExtension({
   color = "#ffffff",
   backgroundColor = "#009299",
   accountList = [],
+  tooltipTitle = "",
+  tooltipDescription = "",
+  title = "",
+  lead = "",
+  description = "",
   target = "_blank",
 }) {
   const [active, setActive] = useState(false);
-  if (!(accountList && accountList[0])) return null;
+  const [renderKey, setRenderKey] = useState("");
+useEffect(() => {
+  setRenderKey(`${Math.floor(Math.random()*1000000)}`)
+}, []);
+
+  if (!(accountList && accountList[0] && renderKey)) return null;
+
   return (
     <div style={{ display: "inline", direction: dir }}>
       <style>
@@ -51,24 +62,24 @@ function ChatExtension({
                 height: 48px;
               }
               
-              .wa__popup_chat_box .wa__popup_heading {
+              .wa__popup_chat_box .wa__popup_heading.wp_${renderKey} {
                 background: ${backgroundColor};
               }
               
-              .wa__btn_popup .wa__btn_popup_icon {
+              .wa__btn_popup .wa__btn_popup_icon.wp_${renderKey} {
                 background: ${backgroundColor};
               }
               
-              .wa__popup_chat_box .wa__popup_heading .wa__popup_title {
+              .wa__popup_chat_box .wa__popup_heading.wp_${renderKey} .wa__popup_title {
                 color: ${color};
               }
               
-              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro {
+              .wa__popup_chat_box .wa__popup_heading.wp_${renderKey} .wa__popup_intro{
                 color: ${color};
                 opacity: 0.8;
               }
               
-              .wa__popup_chat_box .wa__popup_heading .wa__popup_intro strong {
+              .wa__popup_chat_box .wa__popup_heading.wp_${renderKey} .wa__popup_intro strong {
                 color: ${color};
               }
             `}
@@ -91,11 +102,13 @@ function ChatExtension({
             marginRight: position === "left" ? "auto" : "7px",
           }}
         >
-          در مورد این محصول سوالی دارید؟
+          {tooltipTitle}
           <br />
-          <strong>چت از طریق واتس‌اپ</strong>
+          <br />
+          <strong>{tooltipDescription}</strong>
+          <br />
         </div>
-        <div className="wa__btn_popup_icon"></div>
+        <div className={`wa__btn_popup_icon wp_${renderKey}`}></div>
       </div>
       <div
         className={`wa__popup_chat_box${
@@ -107,20 +120,19 @@ function ChatExtension({
         }}
       >
         <div
-          className={`wa__popup_heading wa__popup_heading_${dir}`}
+          className={`wa__popup_heading wa__popup_heading_${dir} wp_${renderKey}`}
           style={{
             padding:
               dir === "ltr" ? "15px 74px 17px 43px" : "15px 43px 17px 74px",
           }}
         >
-          <div className="wa__popup_title">شروع مکالمه</div>
+          <div className="wa__popup_title">{title}</div>
           <div className="wa__popup_intro">
-            {accountList && accountList.length > 1 ? (
-              <span>یکی از اعضا را انتخاب و</span>
-            ) : (
-              <span> لطفا </span>
-            )}
-            در <strong>واتس‌اپ</strong> گفتگو کنید
+            {/* {accountList && accountList.length > 1 ? (
+              <span>{selectMember || ""}</span>
+            ) : ( */}
+              <strong>{lead}</strong>
+            {/* )} */}
           </div>
         </div>
         {/* <!-- /.wa__popup_heading --> */}
@@ -128,9 +140,7 @@ function ChatExtension({
           className="wa__popup_content wa__popup_content_left"
           style={{ textAlign: dir === "ltr" ? "left" : "right" }}
         >
-          <div className="wa__popup_notice">
-            پاسخگو، به طور معمول در چند دقیقه پاسخ می دهند.
-          </div>
+          <div className="wa__popup_notice">{description}</div>
 
           <div className="wa__popup_content_list">
             {accountList.map((item, index) => {
@@ -138,13 +148,15 @@ function ChatExtension({
                 <div className="wa__popup_content_item " key={index}>
                   <a
                     target={target}
-                    href={`
+                    href={item.status?`
                     ${checkMobile(
                       "whatsapp://",
                       "https://web.whatsapp.com/"
-                    )}send?phone=${item.account}`}
+                    )}send?phone=${item.account}` : undefined}
                     className="wa__stt wa__stt_online"
                     style={{
+                      cursor:item.status?'pointer' : "default",
+                      filter:!item.status?'blur(2px) grayscale(0.5) opacity(0.5)' :undefined,
                       borderLeft:
                         dir === "rtl"
                           ? item.status
