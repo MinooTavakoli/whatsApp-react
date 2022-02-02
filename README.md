@@ -112,7 +112,6 @@ MIT
 
 ### TODO
 
-- [x] Complete the README.md
 - [x] Determining props
 - [ ] Ability to send the first chat on the current page
 - [ ] Ability to Avatar Groups and max Show Avatar
