@@ -15,6 +15,7 @@ More than 2 billion people in over 180 countries use WhatsApp1 to stay in touch 
 - [Props](#props)
 - [License](#license)
 - [Author](#author)
+- [TODO](#todo)
 
 ### Installation
 
@@ -108,6 +109,12 @@ MIT
 ### Author
 
 > Minoo Tavakoli
+
+### TODO
+
+| TODO    | description                                        |
+| ------- | -------------------------------------------------- |
+| Ability | Ability to send the first chat on the current page |
 
 [license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
 [license-url]: LICENSE
