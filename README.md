@@ -112,9 +112,12 @@ MIT
 
 ### TODO
 
-| TODO    | description                                        |
-| ------- | -------------------------------------------------- |
-| Ability | Ability to send the first chat on the current page |
+- [x] Complete the README.md
+- [x] Determining props
+- [] Ability to send the first chat on the current page
+- [] Ability to Avatar Groups and max Show Avatar
+- [] Ability to show online avatar
+- [] Ability to send the first chat on the current page
 
 [license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
 [license-url]: LICENSE
