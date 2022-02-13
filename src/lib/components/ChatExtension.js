@@ -1,5 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
+import sendIconImage from "./img/send.png";
 import "./ChatExtension.css";
+
 const checkMobile = (isMobile, other) => {
   const mobileCheck = function () {
     let check = false;
@@ -25,6 +28,10 @@ const checkMobile = (isMobile, other) => {
 
 function ChatExtension({
   dir = "ltr",
+  phoneNumber = "",
+  textareaPlaceholder = "",
+  sendIcon="",
+  widthSendIcon="42",
   position = "left",
   color = "#ffffff",
   backgroundColor = "#009299",
@@ -38,9 +45,11 @@ function ChatExtension({
 }) {
   const [active, setActive] = useState(false);
   const [renderKey, setRenderKey] = useState("");
-useEffect(() => {
-  setRenderKey(`${Math.floor(Math.random()*1000000)}`)
-}, []);
+  const [valueErea, setValueErea] = useState();
+
+  useEffect(() => {
+    setRenderKey(`${Math.floor(Math.random() * 1000000)}`);
+  }, []);
 
   if (!(accountList && accountList[0] && renderKey)) return null;
 
@@ -131,7 +140,7 @@ useEffect(() => {
             {/* {accountList && accountList.length > 1 ? (
               <span>{selectMember || ""}</span>
             ) : ( */}
-              <strong>{lead}</strong>
+            <strong>{lead}</strong>
             {/* )} */}
           </div>
         </div>
@@ -148,15 +157,21 @@ useEffect(() => {
                 <div className="wa__popup_content_item " key={index}>
                   <a
                     target={target}
-                    href={item.status?`
+                    href={
+                      item.status
+                        ? `
                     ${checkMobile(
                       "whatsapp://",
                       "https://web.whatsapp.com/"
-                    )}send?phone=${item.account}` : undefined}
+                    )}send?phone=${item.account}`
+                        : undefined
+                    }
                     className="wa__stt wa__stt_online"
                     style={{
-                      cursor:item.status?'pointer' : "default",
-                      filter:!item.status?'blur(2px) grayscale(0.5) opacity(0.5)' :undefined,
+                      cursor: item.status ? "pointer" : "default",
+                      filter: !item.status
+                        ? "blur(2px) grayscale(0.5) opacity(0.5)"
+                        : undefined,
                       borderLeft:
                         dir === "rtl"
                           ? item.status
@@ -365,6 +380,34 @@ useEffect(() => {
               );
             })}
           </div>
+        </div>
+        <div className="textarea-whatsapp-wrapper">
+          <textarea
+            className="textarea-wh"
+            placeholder={textareaPlaceholder}
+            value={valueErea}
+            onChange={(e) => {
+              setValueErea(e.target.value);
+            }}
+          />
+          <a
+            className="textarea-whatsapp"
+            href={`${"https://web.whatsapp.com/"}send?phone=${phoneNumber}&text=${
+              valueErea?.length > 1 ? valueErea : ""
+            }`}
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <div
+              title={dir == "rtl" ? "ارسال" : "send"}
+              className="send-textarea-wh"
+              style={{
+                transform: dir == "rtl" ? "rotate(-135deg)" : "rotate(45deg)",
+              }}
+            >
+              <img width={widthSendIcon} src={sendIcon ? sendIcon : sendIconImage} />
+            </div>
+          </a>
         </div>
       </div>
     </div>

@@ -1,0 +1,9 @@
+.idea
+.git
+.vscode
+.test
+.travis.yml
+/dist/
+/node_modules/
+/src/config/api\.js
+package-lock\.json

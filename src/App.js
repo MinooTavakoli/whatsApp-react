@@ -5,6 +5,7 @@ import userThree from "./lib/components/user_three.jpg";
 import userFour from "./lib/components/user_four.jpg";
 import userFive from "./lib/components/user_five.jpg";
 import whatsAppBg from "./lib/components/whatsApp-bg.png";
+import sendIcon from "./lib/components/img/send.png";
 import "./App.css";
 
 function App() {
@@ -83,6 +84,9 @@ function App() {
         <h1>WhatsApp React Chat</h1>
       </div>
       <WhatsApp
+        phoneNumber="98912*******"
+        textareaPlaceholder="send message ..."
+        widthSendIcon={42}
         tooltipTitle={"Do you have any questions about this product?"}
         tooltipDescription="Chat via WhatsApp"
         title={"${{title}}"}
@@ -91,6 +95,10 @@ function App() {
         accountList={englishAccounts}
       />
       <WhatsApp
+        phoneNumber="98912*******"
+        textareaPlaceholder="پیامی ارسال کنید ..."
+        sendIcon={sendIcon}
+        widthSendIcon={42}
         dir="rtl"
         position="right"
         tooltipTitle={"در مورد این محصول سوالی دارید؟"}
@@ -99,7 +107,6 @@ function App() {
         lead={"لطفا در واتس‌اپ چت نمایید."}
         description={"پاسخگو،‌به طور معمول در چند دقیقه پاسخ می‌دهد"}
         accountList={persianAccounts}
-        // backgroundColor="red"
       />
     </div>
   );

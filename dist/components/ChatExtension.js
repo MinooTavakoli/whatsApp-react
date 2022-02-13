@@ -15,12 +15,17 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _send = _interopRequireDefault(require("./img/send.png"));
+
 require("./ChatExtension.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+/* eslint-disable jsx-a11y/alt-text */
 const checkMobile = (isMobile, other) => {
   const mobileCheck = function mobileCheck() {
     let check = false;
@@ -42,6 +47,10 @@ const checkMobile = (isMobile, other) => {
 function ChatExtension(_ref) {
   let {
     dir = "ltr",
+    phoneNumber = "",
+    textareaPlaceholder = "",
+    sendIcon = "",
+    widthSendIcon = "42",
     position = "left",
     color = "#ffffff",
     backgroundColor = "#009299",
@@ -55,6 +64,7 @@ function ChatExtension(_ref) {
   } = _ref;
   const [active, setActive] = (0, _react.useState)(false);
   const [renderKey, setRenderKey] = (0, _react.useState)("");
+  const [valueErea, setValueErea] = (0, _react.useState)();
   (0, _react.useEffect)(() => {
     setRenderKey("".concat(Math.floor(Math.random() * 1000000)));
   }, []);
@@ -115,8 +125,8 @@ function ChatExtension(_ref) {
       href: item.status ? "\n                    ".concat(checkMobile("whatsapp://", "https://web.whatsapp.com/"), "send?phone=").concat(item.account) : undefined,
       className: "wa__stt wa__stt_online",
       style: {
-        cursor: item.status ? 'pointer' : "default",
-        filter: !item.status ? 'blur(2px) grayscale(0.5) opacity(0.5)' : undefined,
+        cursor: item.status ? "pointer" : "default",
+        filter: !item.status ? "blur(2px) grayscale(0.5) opacity(0.5)" : undefined,
         borderLeft: dir === "rtl" ? item.status ? "2px solid #2db742" : "2px solid #ff0000" : "none",
         borderRight: dir === "rtl" ? "none" : item.status ? "2px solid #2db742" : "2px solid #ff0000"
       }
@@ -261,7 +271,30 @@ function ChatExtension(_ref) {
       fill: "none",
       d: "M89.325 58.092C88.684 32.079 67.941 11.063 42.035 10"
     })))))))))), null));
-  })))));
+  }))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "textarea-whatsapp-wrapper"
+  }, /*#__PURE__*/_react.default.createElement("textarea", {
+    className: "textarea-wh",
+    placeholder: textareaPlaceholder,
+    value: valueErea,
+    onChange: e => {
+      setValueErea(e.target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement("a", {
+    className: "textarea-whatsapp",
+    href: "https://web.whatsapp.com/".concat("send?phone=", phoneNumber, "&text=").concat((valueErea === null || valueErea === void 0 ? void 0 : valueErea.length) > 1 ? valueErea : ""),
+    target: "_blank",
+    rel: "noreferrer"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    title: dir == "rtl" ? "ارسال" : "send",
+    className: "send-textarea-wh",
+    style: {
+      transform: dir == "rtl" ? "rotate(-135deg)" : "rotate(45deg)"
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    width: widthSendIcon,
+    src: sendIcon ? sendIcon : _send.default
+  }))))));
 }
 
 var _default = ChatExtension;
