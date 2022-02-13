@@ -36,6 +36,7 @@ import userOne from "./lib/components/user_one.jpg";
 import userTwo from "./lib/components/user_two.jpg";
 import userThree from "./lib/components/user_three.jpg";
 import userFour from "./lib/components/user_four.jpg";
+import sendIcon from "./lib/components/img/send.png";
 
 function App() {
   const englishAccounts = [
@@ -68,6 +69,37 @@ function App() {
       status: true,
     },
   ];
+  const persianAccounts = [
+    {
+      name: "نیما کاویانی",
+      position: "مدیر محصول",
+      account: "98912*******",
+      avatar: <img src={userOne} alt="" />,
+      status: false,
+    },
+    {
+      name: "سارا لطیفی ",
+      position: "مدیر پشتیبانی",
+      account: "98912*******",
+      avatar: <img src={userTwo} alt="" />,
+      status: true,
+    },
+    {
+      name: "علی عزیزی",
+      position: "مدیر برنامه نویسی",
+      account: "98912*******",
+      avatar: <img src={userThree} alt="" />,
+      status: true,
+    },
+    {
+      name: "سحر کیانی",
+      position: "مدیر فروش",
+      account: "98912*******",
+      avatar: <img src={userFour} alt="" />,
+      status: true,
+    },
+  ];
+
   return (
     <div>
       <WhatsApp
@@ -77,6 +109,23 @@ function App() {
         lead={"Please chat on WhatsApp"}
         description={"Responsive, usually responds in minutes"}
         accountList={englishAccounts}
+        phoneNumber="98912*******"
+        textareaPlaceholder="send message ..."
+        widthSendIcon={42}
+      />
+      <WhatsApp
+        phoneNumber="98912*******"
+        textareaPlaceholder="پیامی ارسال کنید ..."
+        sendIcon={sendIcon}
+        widthSendIcon={42}
+        dir="rtl"
+        position="right"
+        tooltipTitle={"در مورد این محصول سوالی دارید؟"}
+        tooltipDescription="چت از طریق واتس‌اپ"
+        title={"شروع مکالمه"}
+        lead={"لطفا در واتس‌اپ چت نمایید."}
+        description={"پاسخگو،‌به طور معمول در چند دقیقه پاسخ می‌دهد"}
+        accountList={persianAccounts}
       />
     </div>
   );
@@ -89,18 +138,22 @@ function App() {
 
 ## Props
 
-| props              | defaultValue                                               | description                                                            | status of requirements |
-| ------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------- |
-| accountList        | []                                                         | `[{name: "", position: "", account: "", avatar: null, status: true }]` | required \*            |
-| dir                | ltr                                                        | `ltr` \|\| `rtl`                                                       | optional               |
-| position           | left                                                       | `left` \|\| `right`                                                    | optional               |
-| tooltipTitle       | string                                                     | `The question in tooltip title`                                        | optional               |
-| tooltipDescription | string                                                     | `The desired tooltip description`                                      | optional               |
-| title              | string                                                     | `Text to get started`                                                  | optional               |
-| lead               | string                                                     | `Text to lead`                                                         | optional               |
-| description        | string                                                     | `description text`                                                     | optional               |
-| color              | <span style="background:#376466;color:#fff">#ffffff</span> | `any color`                                                            | optional               |
-| backgroundColor    | <span style="background:#376466;color:#fff">#376466</span> | `any color`                                                            | optional               |
+| props               | defaultValue                                               | description                                                            | status of requirements |
+| ------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------- |
+| accountList         | []                                                         | `[{name: "", position: "", account: "", avatar: null, status: true }]` | required \*            |
+| dir                 | ltr                                                        | `ltr` \|\| `rtl`                                                       | optional               |
+| phoneNumber         | string                                                     | `phone number to send in the first texterea`                           | optional               |
+| textareaPlaceholder | string                                                     | `textareaPlaceholder to send in the first texterea`                    | optional               |
+| sendIcon            | string                                                     | `send icon image to send in the first texterea`                        | optional               |
+| widthSendIcon       | string                                                     | `width send icon to send in the first texterea`                        | optional               |
+| position            | left                                                       | `left` \|\| `right`                                                    | optional               |
+| tooltipTitle        | string                                                     | `The question in tooltip title`                                        | optional               |
+| tooltipDescription  | string                                                     | `The desired tooltip description`                                      | optional               |
+| title               | string                                                     | `Text to get started`                                                  | optional               |
+| lead                | string                                                     | `Text to lead`                                                         | optional               |
+| description         | string                                                     | `description text`                                                     | optional               |
+| color               | <span style="background:#376466;color:#fff">#ffffff</span> | `any color`                                                            | optional               |
+| backgroundColor     | <span style="background:#376466;color:#fff">#376466</span> | `any color`                                                            | optional               |
 
 ### License
 
@@ -113,10 +166,9 @@ MIT
 ### TODO
 
 - [x] Determining props
-- [ ] Ability to send the first chat on the current page
+- [x] Ability to send the first chat on the current page
 - [ ] Ability to Avatar Groups and max Show Avatar
 - [ ] Ability to show online avatar
-- [ ] Ability to send the first chat on the current page
 
 [license-image]: http://img.shields.io/npm/l/whatsapp-react.svg?style=flat
 [license-url]: LICENSE
