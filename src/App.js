@@ -70,6 +70,25 @@ function App() {
     },
   ];
 
+  // const englishAccounts = [
+  //   {
+  //     name: "Jeffrey Brown",
+  //     position: "creative leader",
+  //     account: "98912*******",
+  //     avatar: <img src={userOne} alt="" />,
+  //     status: false,
+  //   },
+  // ];
+  // const persianAccounts = [
+  //   {
+  //     name: "نیما کاویانی",
+  //     position: "مدیر محصول",
+  //     account: "98912*******",
+  //     avatar: <img src={userOne} alt="" />,
+  //     status: false,
+  //   },
+  // ];
+
   return (
     <div>
       <div
@@ -108,6 +127,34 @@ function App() {
         description={"پاسخگو،‌به طور معمول در چند دقیقه پاسخ می‌دهد"}
         accountList={persianAccounts}
       />
+
+      {/* <WhatsApp
+        theme={2}
+        phoneNumber="98912*******"
+        textareaPlaceholder="send message ..."
+        widthSendIcon={42}
+        tooltipTitle={"Do you have any questions about this product?"}
+        tooltipDescription="Message Us"
+        title={"${{title}}"}
+        lead={"${{lead}}"}
+        description={"${{description}}"}
+        accountList={englishAccounts}
+      />
+      <WhatsApp
+        theme={2}
+        phoneNumber="98912*******"
+        textareaPlaceholder="پیامی ارسال کنید ..."
+        sendIcon={sendIcon}
+        widthSendIcon={42}
+        dir="rtl"
+        position="right"
+        tooltipTitle={"در مورد این محصول سوالی دارید؟"}
+        tooltipDescription="ارسال پیام"
+        title={"شروع مکالمه"}
+        lead={"لطفا در واتس‌اپ چت نمایید."}
+        description={"پاسخگو،‌به طور معمول در چند دقیقه پاسخ می‌دهد"}
+        accountList={persianAccounts}
+      /> */}
     </div>
   );
 }
